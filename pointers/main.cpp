@@ -1,18 +1,12 @@
 # include <iostream>
-
+# include <string>
 using namespace std;
 
 int main()
 {
-    int Address = 3509;
+    string welcome = "Hello world!";
 
-    int* PointerToDir;
-
-    PointerToDir = &Address;
-    *PointerToDir = 3;
-
-    cout << Address << endl;
-    
+    cout << welcome << endl;
 
     return 0;
 }

@@ -47,9 +47,6 @@ int main()
     return 0;
 }
 
-Here you can see the program in action:
-![running]()
-
 // Here we ask for the pointer *radius
 double calculateArea(Figure figure, int *radius)
 {
@@ -73,12 +70,20 @@ double calculateArea(Figure figure, int *radius)
 }
 ```
 
+Here you can see the program in action:
+![running](https://raw.githubusercontent.com/raulpenate/Cplusplus/main/info/example.png)
 
 # How to Run C++ inside VSCode
 
 - Install __C++ Code Pack__ and __Code Runner__ extension:
-![c++ extension]()
-![coderunner extension]()
+![c++ extension](https://raw.githubusercontent.com/raulpenate/Cplusplus/main/info/extension-cpp.png)
+![coderunner extension](https://raw.githubusercontent.com/raulpenate/Cplusplus/main/info/extension-cr.png)
+
+- Press `ctrl + ,` Search __code runner terminal__ and Allow __Code Runner__ to run in the terminal, in case you need to use `cin` to insert data to your program.
+![coderunner extension](https://raw.githubusercontent.com/raulpenate/Cplusplus/main/info/code-runner.png)
+
+- Congratulation, now you can runt it just pressing `ctrl + enter` or the `Run Code` button, and __Code Runne__ will create the commands for you to compile the file and show it.
+![Running](https://raw.githubusercontent.com/raulpenate/Cplusplus/main/info/running.png)
 
 ## Personal tweaks 
 In case you want to an script that creates a `bin` folder and `bin` files inside that folder automatically, I made this personal tweak in my code runner inside VSCode to make that possible:
@@ -98,4 +103,4 @@ else
     exit 0
 fi
 ```
-I must admin the `else` in unecessary, but I like that `exit 0` guarantees that in case `bin` file exist it will finish the script as a succesful run and the pipeline keeps running.
+I must admin the `else` in unnecessary, but I like that `exit 0` guarantees that in case `bin` file exist it will finish the script as a succesful run and the pipeline keeps running.
