@@ -2,7 +2,7 @@
 This repo was made just to learn `C++` pointers, and things that I was missing in CS journey.
 
 ## Honestly
-You don't need to learn it if you're going to use it, but in case you're curious with this code you can understand it clearly if you already know any other High Level language:
+You don't need to learn it if you're NOT going to use it, but in case you're curious with this code you can understand it clearly if you already know any other High Level language:
 
 ```cpp
 #include <iostream>
