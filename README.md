@@ -75,6 +75,8 @@ Here you can see the program in action:
 
 # How to Run C++ inside VSCode
 
+## 1 - Monolithic projects
+
 - Install __C++ Code Pack__ and __Code Runner__ extension:
 ![c++ extension](https://raw.githubusercontent.com/raulpenate/Cplusplus/main/info/extension-cpp.png)
 ![coderunner extension](https://raw.githubusercontent.com/raulpenate/Cplusplus/main/info/extension-cr.png)
@@ -85,7 +87,7 @@ Here you can see the program in action:
 - Congratulation, now you can runt it just pressing `ctrl + enter` or the `Run Code` button, and __Code Runne__ will create the commands for you to compile the file and show it.
 ![Running](https://raw.githubusercontent.com/raulpenate/Cplusplus/main/info/running.png)
 
-## Personal tweaks 
+### Personal tweaks 
 In case you want to an script that creates a `bin` folder and `bin` files inside that folder automatically, I made this personal tweak in my code runner inside VSCode to make that possible:
 ```bash
  "code-runner.executorMap": {
@@ -105,10 +107,52 @@ fi
 ```
 I must admin the `else` in unnecessary, but I like that `exit 0` guarantees that in case `bin` file exist it will finish the script as a succesful run and the pipeline keeps running.
 
-# Makefile
-
+## 2 - Modular projects
 The make program is intended to automate the mundane aspects of transforming
 source code into an executable. The advantages of make over scripts is that you can
 specify the relationships between the elements of your program to make, and it knows
 through these relationships and timestamps exactly what steps need to be redone to
 produce the desired program each time. Using this information, make can also optimize the build process avoiding unnecessary steps.
+
+```makefile
+# using:
+# make				# compile proyect
+# make remove	#	remove all binaries and objects
+# 
+.PHONY = all clean ensamble remove
+
+CC = g++
+HEADERSDIR = ./Headers/include
+SRCSDIR = ./Sources/src
+MAINDIR = ./Sources
+
+SRCS := $(wildcard ${SRCSDIR}/*.cpp)
+OBJECTSRCS := ${SRCS:${SRCSDIR}/%.cpp=%.o}
+
+all: ${OBJECTSRCS} main.o ensamble clean
+
+ensamble: main.o
+	@echo "Ensambling.."
+	${CC} -o proyect.out *.o
+
+%.o: ${SRCSDIR}/%.cpp
+	@echo "Creating object..."
+	${CC} -c -I ${HEADERSDIR} $<
+
+main.o: ${MAINDIR}/main.cpp
+	@echo "Compiling main.cpp.."
+	${CC} -c -I ${HEADERSDIR} $<
+
+clean:
+	@echo "Cleaning compilation..."
+	rm *.o
+
+remove:
+	rm -fv proyect.out
+	rm -fv *.
+```
+
+And to build your project just build it `make` command and run the `bin` file with `./project.out` or the name you decided to use:
+```
+ make && ./proyect.out
+ ```
