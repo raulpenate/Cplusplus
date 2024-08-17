@@ -159,6 +159,7 @@ And to build your project just build it `make` command and run the `bin` file wi
 
  # Memes
  Oh yes, it happened and a lot..:
+
  ![memory](https://raw.githubusercontent.com/raulpenate/Cplusplus/main/info/segmentation-xd.png)
 
  ![meme](https://raw.githubusercontent.com/raulpenate/Cplusplus/main/info/meme.png)
