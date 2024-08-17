@@ -104,3 +104,11 @@ else
 fi
 ```
 I must admin the `else` in unnecessary, but I like that `exit 0` guarantees that in case `bin` file exist it will finish the script as a succesful run and the pipeline keeps running.
+
+# Makefile
+
+The make program is intended to automate the mundane aspects of transforming
+source code into an executable. The advantages of make over scripts is that you can
+specify the relationships between the elements of your program to make, and it knows
+through these relationships and timestamps exactly what steps need to be redone to
+produce the desired program each time. Using this information, make can also optimize the build process avoiding unnecessary steps.

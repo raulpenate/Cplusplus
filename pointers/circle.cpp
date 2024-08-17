@@ -8,13 +8,14 @@ enum Figure
     CIRCLE,
     SPHERE
 };
-// This is a function prototype
+// This is a function prototype - declaration
 // this tells the compiler about the func name return type before it encounters the implementation
 // before main() func is executed, like hosting in JS
 double calculateArea(Figure figure, int *radius);
 
 int main()
 {
+    // This assignment
     int radius = 0;
     cout << "Radius value: " << radius << endl;
     cout << "Radius memory reference: " << &radius << "\n" << endl;
