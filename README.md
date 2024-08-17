@@ -153,7 +153,7 @@ remove:
 ```
 
 And to build your project just build it `make` command and run the `bin` file with `./project.out` or the name you decided to use:
-```
+```bash
  make && ./proyect.out
  ```
 
