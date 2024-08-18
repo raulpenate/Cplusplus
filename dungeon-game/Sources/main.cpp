@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "MapCell.h"
 #include "GameMap.h"
+#include <Enemy.h>
 
 using namespace std;
 

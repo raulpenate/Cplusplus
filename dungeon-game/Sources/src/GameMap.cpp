@@ -75,6 +75,11 @@ bool GameMap::SetPlayerCell(int PlayerX, int PlayerY)
             DrawVictory();
             return true;
         }
+        if(cells[PlayerX][PlayerY].id == 'x')
+        {
+            isGameOver = true;
+            return false;
+        }
         else
         {
             if(PlayerCell != NULL)
